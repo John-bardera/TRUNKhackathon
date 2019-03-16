@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, LoadingController } from 'ionic-angular';
-import { HomePage } from "../home/home";
+import { TabsPage } from "../tabs/tabs";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 
 interface authorizationParams {
@@ -75,21 +75,20 @@ export class LoginPage {
   makeAccessToken() {
     let loader = this.loadingCtrl.create({
       content: "Please wait...",
-      duration: 5000
+      duration: 2000
     });
     this.headers = new HttpHeaders();
     this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
-    //let body = `grant_type=authorization_code&code=${code}&redirect_uri=http%3A%2F%2Flocalhost%3A8100&client_id=1555716218&client_secret=767ce50ab81d99c1792be99307f4ce04`;
     loader.present();
     const body = new HttpParams()
       .set('grant_type', 'authorization_code')
       .set('code', this.params.code)
-      .set('redirect_uri', 'http%3A%2F%2Flocalhost%3A8100')
+      .set('redirect_uri', 'http://localhost:8100')
       .set('client_id', '1555716218')
       .set('client_secret', '767ce50ab81d99c1792be99307f4ce04');
-    this.httpClient.post('https://api.line.me/oauth2/v2.1/token', body.toString(),{headers: this.headers}).subscribe(response => {
+    this.httpClient.post('https://api.line.me/oauth2/v2.1/token', body,{ headers: this.headers }).subscribe(response => {
       console.log(response);
-      this.navCtrl.setRoot(HomePage, response);
+      this.navCtrl.setRoot(TabsPage, response);
     });
   }
 }
