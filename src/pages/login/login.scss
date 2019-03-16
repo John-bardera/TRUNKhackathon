@@ -32,6 +32,9 @@ page-login {
     margin-top: 30%;
     color: whitesmoke;
   }
+  .button:hover {
+    background-color: lawngreen;
+  }
   .error-message {
     color: red;
     font-size: 14px;

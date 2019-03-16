@@ -10,9 +10,6 @@ interface authorizationParams {
   error: string | null;
   error_description: string | null;
 }
-//interface accessTokenParams {
-//  hoge: any,
-//}
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -87,8 +84,8 @@ export class LoginPage {
       .set('client_id', '1555716218')
       .set('client_secret', '767ce50ab81d99c1792be99307f4ce04');
     this.httpClient.post('https://api.line.me/oauth2/v2.1/token', body,{ headers: this.headers }).subscribe(response => {
-      console.log(response);
       this.navCtrl.setRoot(TabsPage, response);
+      loader.dismissAll()
     });
   }
 }
