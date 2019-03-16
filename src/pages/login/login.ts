@@ -26,8 +26,7 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController,
     public loadingCtrl: LoadingController,
-    public httpClient: HttpClient,
-    public httpParams: HttpParams
+    public httpClient: HttpClient
   ) {
     this.params = {
       code: null,
@@ -74,8 +73,6 @@ export class LoginPage {
     window.open(url, '_system');
   }
   makeAccessToken() {
-    let code: string = this.params.code;
-    console.log(code);
     let loader = this.loadingCtrl.create({
       content: "Please wait...",
       duration: 5000
@@ -84,9 +81,13 @@ export class LoginPage {
     this.headers.append('Content-Type', 'application/x-www-form-urlencoded');
     //let body = `grant_type=authorization_code&code=${code}&redirect_uri=http%3A%2F%2Flocalhost%3A8100&client_id=1555716218&client_secret=767ce50ab81d99c1792be99307f4ce04`;
     loader.present();
-    let body = new HttpParams()
-    
-    this.httpClient.post('https://api.line.me/oauth2/v2.1/token', body,{headers: this.headers}).subscribe(response => {
+    const body = new HttpParams()
+      .set('grant_type', 'authorization_code')
+      .set('code', this.params.code)
+      .set('redirect_uri', 'http%3A%2F%2Flocalhost%3A8100')
+      .set('client_id', '1555716218')
+      .set('client_secret', '767ce50ab81d99c1792be99307f4ce04');
+    this.httpClient.post('https://api.line.me/oauth2/v2.1/token', body.toString(),{headers: this.headers}).subscribe(response => {
       console.log(response);
       this.navCtrl.setRoot(HomePage, response);
     });
