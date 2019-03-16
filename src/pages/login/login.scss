@@ -1,0 +1,39 @@
+page-login {
+  .cover-parent {
+    height: 100%;
+    width: 100%;
+    background-image: url("https://www.pakutaso.com/shared/img/thumb/dandasanPAS01621.jpg");
+    background-position-x: -120px;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+  .spacer {
+    height: 10%;
+  }
+  h1 {
+    font-size: 30px;
+    color: whitesmoke;
+  }
+  .message {
+    color: gainsboro;
+    font-size: 16px;
+  }
+  .cover {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .button-parent{
+    text-align: center;
+  }
+  .button {
+    background-color: green;
+    margin-top: 30%;
+    color: whitesmoke;
+  }
+  .error-message {
+    color: red;
+    font-size: 14px;
+  }
+}

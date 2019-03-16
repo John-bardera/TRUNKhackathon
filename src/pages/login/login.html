@@ -1,0 +1,15 @@
+<ion-content no-padding>
+  <div class="cover-parent" no-padding>
+    <div class="cover" no-padding>
+      <div class="spacer"></div>
+      <h1>HOGEはコース料理・食べ放題の専門SNSです。</h1>
+      <div class="message">HOGEはグループでの食事を楽しく円滑にするために生まれました。</div>
+      <div class="message">是非おなかいっぱい食べてください！</div>
+      <div class="button-parent">
+        <button ion-button class="button" color="green" (click)="loginLine()">LINEにログインします！！</button>
+      </div>
+      <div class="spacer"></div>
+      <div *ngIf="errorMessage">{{errorMessage}}</div>
+    </div>
+  </div>
+</ion-content>
