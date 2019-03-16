@@ -18,6 +18,14 @@ export class ReservationPage {
   reservationApiUrl: string = 'https://dfedeeeb.ngrok.io/users/1/reservations'
   params: reservationApiParams;
 
+  public event = {
+    month: '2019-01-17',
+    timeStarts: '19:00',
+    timeEnds: '2025-12-31'
+  }
+
+  cheap: string = "cheap";
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -38,6 +46,9 @@ export class ReservationPage {
       .set('reserved_date', this.params.reserved_date)
       .set('is_split', this.params.is_split)
       .set('diners_num', this.params.diners_num);
-    this.httpClient.post(this.reservationApiUrl, body);
+    this.httpClient.post(this.reservationApiUrl, body).subscribe(response => {
+//       this.navCtrl.setRoot(TabsPage, response);
+//       loader.dismissAll()
+    });
   }
 }
