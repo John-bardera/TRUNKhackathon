@@ -27,13 +27,12 @@ page-login {
   .button-parent{
     text-align: center;
   }
-  .button {
+  .button-parent:hover {
     background-color: green;
-    margin-top: 30%;
-    color: whitesmoke;
   }
-  .button:hover {
-    background-color: lawngreen;
+  .button {
+    background-color: #01B902;
+    color: whitesmoke;
   }
   .error-message {
     color: red;

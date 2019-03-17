@@ -5,25 +5,33 @@
 </ion-header>
 
 <ion-content padding>
-  <div>
+  <div *ngIf="isLoaded; else elseBlock">
     <div *ngFor="let item of items">
-      <ion-card>
-        <img [src]="item.image" />
-        <ion-card-content>
-          <ion-card-title>
-            <h1>{{item.restaurant_name}}</h1>
-            <div>{{item.title}}</div>
-          </ion-card-title>
-          <p>
-            {{shortCutContent(item.content)}}
-          </p>
-          <div>
-            <div>
-              {{item.created_time}}
+      <a (click)="goToDetail(index)" class="fly">
+        <ion-card>
+          <!--<img [src]="item.image_uri" />-->
+          <img src="https://www.pakutaso.com/shared/img/thumb/dandasanPAS01621.jpg" />
+          <ion-card-content>
+            <ion-card-title>
+              <h1 class="name">{{item.restaurant_name}}</h1>
+              <div class="title">{{item.title}}</div>
+            </ion-card-title>
+            <p class="contents">
+              {{shortCutContent(item.content)}}...
+            </p>
+            <div class="created_at_parent">
+              <div class="created_at">
+                {{item.created_time}}
+              </div>
             </div>
-          </div>
-        </ion-card-content>
-      </ion-card>
+          </ion-card-content>
+        </ion-card>
+      </a>
     </div>
   </div>
+  <ng-template #elseBlock>
+    <div class="loading">
+      なうろーでぃんぐ！！
+    </div>
+  </ng-template>
 </ion-content>
