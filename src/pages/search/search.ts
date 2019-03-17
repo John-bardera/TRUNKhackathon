@@ -9,7 +9,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class SearchPage {
   value: string;
-  searchApiUrl: string = 'https://dfedeeeb.ngrok.io/restaurants/search';
+  searchApiUrl: string = 'restaurants/search';
   searchResult: any;
   records: any;
 
