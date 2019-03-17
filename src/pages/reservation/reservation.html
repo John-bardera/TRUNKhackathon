@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>店の名前</ion-title>
+    <ion-title>店名 予約</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -26,10 +26,12 @@
  </ion-list>
 
   <ion-item>
-    <ion-label>LINE PAY で割り勘</ion-label>
+    <ion-label>LINE PAY で割り勘する</ion-label>
     <ion-checkbox color="green" checked="false"></ion-checkbox>
   </ion-item>
 
-  <button ion-button color="secondary" (click)="reservationApi()">予約をするぜ!</button>
+  <div class="spacer"></div>
+
+  <button ion-button class="submit-button" (click)="reservationApi()">予約をする</button>
 
 </ion-content>
