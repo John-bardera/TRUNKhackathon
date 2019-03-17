@@ -47,7 +47,7 @@ export class HomePage {
       Object.keys(response).forEach(index => {
         this.items[index] = {
           content: response[index].content,
-          created_time: response[index].created_time,
+          created_time: response[index].created_time.replace(/[TZ]/g, " "),
           image_uri: response[index].image_uri,
           restaurant_id: {
             type: response[index].restaurant_id.type,

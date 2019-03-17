@@ -11,8 +11,9 @@ page-login {
     height: 10%;
   }
   h1 {
-    font-size: 30px;
+    font-size: 25px;
     color: whitesmoke;
+    font-weight: bold;
   }
   .message {
     color: gainsboro;
@@ -26,6 +27,7 @@ page-login {
   }
   .button-parent{
     text-align: center;
+    margin: 5pt;
   }
   .button-parent:hover {
     background-color: green;

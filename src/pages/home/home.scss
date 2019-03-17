@@ -4,8 +4,11 @@ page-home {
     color: rgba(1, 185, 2, 0.6);
   }
   .name {
-    font-size: 30px;
     text-align: right;
+    margin-right: 5pt;
+    margin-left: -5pt;
+    margin-top: -5pt;
+    margin-buttom: -5pt;
     color: lightslategrey;
   }
   .title {
