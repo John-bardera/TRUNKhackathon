@@ -27,7 +27,7 @@ interface tlApiItems {
 })
 export class HomePage {
   shortCutMax: number = 100;
-  tlApiUrl: string = 'https://dfedeeeb.ngrok.io/users/1/tl';
+  tlApiUrl: string = 'http://fdad11ff.ngrok.io/users/1/tl';
   items: tlApiItems[];
   isLoaded: boolean = false;
 

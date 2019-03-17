@@ -15,7 +15,7 @@ interface reservationApiParams {
   templateUrl: 'reservation.html',
 })
 export class ReservationPage {
-  reservationApiUrl: string = 'https://dfedeeeb.ngrok.io/users/1/reservations'
+  reservationApiUrl: string = 'http://fdad11ff.ngrok.io/users/1/reservations'
   params: reservationApiParams;
 
   public event = {
