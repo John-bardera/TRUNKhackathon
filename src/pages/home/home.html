@@ -9,15 +9,15 @@
     <div *ngFor="let item of items">
       <a (click)="goToDetail(index)" class="fly">
         <ion-card>
-          <!--<img [src]="item.image_uri" />-->
-          <img src="https://www.pakutaso.com/shared/img/thumb/dandasanPAS01621.jpg" />
+          <img [src]="item.image_uri" />
+          <!--<img src="https://www.pakutaso.com/shared/img/thumb/dandasanPAS01621.jpg" />-->
           <ion-card-content>
             <ion-card-title>
               <h1 class="name">{{item.restaurant_name}}</h1>
               <div class="title">{{item.title}}</div>
             </ion-card-title>
             <p class="contents">
-              {{shortCutContent(item.content)}}...
+              {{shortCutContent(item.content)}}...(続きを読む)
             </p>
             <div class="created_at_parent">
               <div class="created_at">
