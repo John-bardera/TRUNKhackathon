@@ -12,6 +12,9 @@ import { ReservationPage } from "../pages/reservation/reservation";
 import { SettingPage } from "../pages/setting/setting";
 import {LoginPage} from "../pages/login/login";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {ProfilePage} from "../pages/profile/profile";
+import {ReservePage} from "../pages/reserve/reserve";
+import {PostPage} from "../pages/post/post";
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     SearchPage,
     ReservationPage,
     SettingPage,
-    LoginPage
+    LoginPage,
+    ProfilePage,
+    ReservePage,
+    PostPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,10 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     SearchPage,
     ReservationPage,
     SettingPage,
-    LoginPage
+    LoginPage,
+    ProfilePage,
+    ReservePage,
+    PostPage
   ],
   providers: [
     StatusBar,

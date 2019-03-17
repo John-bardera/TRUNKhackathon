@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from "@angular/common/http";
+import {ProfilePage} from "../profile/profile";
 
 @IonicPage()
 @Component({
@@ -10,7 +11,6 @@ import { HttpClient } from "@angular/common/http";
 export class SearchPage {
   value: string;
   searchApiUrl: string = 'http://fdad11ff.ngrok.io/restaurants/search';
-  searchResult: any;
   records: any;
 
   constructor(
@@ -28,6 +28,6 @@ export class SearchPage {
     })
   }
   goToDetail(record: any) {
-    console.log(record);
+    this.navCtrl.push(ProfilePage, { params: record });
   }
 }
