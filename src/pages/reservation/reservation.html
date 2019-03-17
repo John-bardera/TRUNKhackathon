@@ -1,10 +1,35 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Reservation</ion-title>
+    <ion-title>店の名前</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>コースを選んでください</ion-label>
+      <ion-select [(ngModel)]="cheap">
+        <ion-option value="cheap">お手軽コース</ion-option>
+        <ion-option value="middle">ミドルコース</ion-option>
+        <ion-option value="luxuary">叙々苑コース</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>予約する日時を選んでください</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime>
+    </ion-item>
+ </ion-list>
+
+  <ion-item>
+    <ion-label>LINE PAY で割り勘</ion-label>
+    <ion-checkbox color="green" checked="false"></ion-checkbox>
+  </ion-item>
+
+  <button ion-button color="secondary" (click)="reservationApi()">予約をするぜ!</button>
 
 </ion-content>
